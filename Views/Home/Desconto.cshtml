@@ -1,0 +1,84 @@
+﻿@model ProdutoModel
+
+@{
+    ViewBag.Title = "Desconto";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/resources/css/style.css">
+    <title>index</title>
+    <style>
+        #btn_div {
+            padding-top: 70px;
+            padding-left: 500px;
+        }
+
+        #texto {
+            padding-top: 100px;
+            float: left;
+            width: 50%;
+        }
+
+        #tudo {
+            display: table;
+        }
+
+        #texto {
+            padding-top: 50px;
+  
+        }
+
+        #imagem {
+            padding-top: 50px;
+            padding-left: 628px;
+        }
+
+        #botao {
+            padding-top: 50px;
+            padding-left: 30%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="tudo">
+        <!-- main header -->
+        <header>
+        </header>
+        <!-- home -->
+        <div id="texto">
+            <h1>Obrigado!</h1>
+
+            <h1>Não esqueça do seu cupom!</h1>
+
+            <p1>
+                Uma cópia deste código já está no seu email e pode ser usado on-line ou nas lojas físicas.<br><br>
+                Este código pode ser usado em qualquer loja física ou virtual da Natura.<br><br>
+
+            </p1>
+
+
+        </div>
+        <div id="imagem">
+            <img src="~/resources/images/Index/Frame 3 (1) 1.png" width="525" height="318">
+        </div>
+
+        <div id="btn_div">
+            <input id="prox" onclick="window.location='Index'" type="submit" value="Voltar à tela inicial" class="btn btn-info">
+        </div>
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
+
+

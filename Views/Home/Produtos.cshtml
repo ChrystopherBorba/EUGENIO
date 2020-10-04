@@ -1,0 +1,78 @@
+﻿@model IEnumerable<eugenio.Models.Produto>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/resources/css/style.css">
+    <title>index</title>
+    <style>
+    </style>
+    <style>
+        #btn_div {
+            padding-top: 150px;
+            padding-left: 500px;
+        }
+        #texto {
+            padding-top: 100px;
+            float: left;
+            width: 50%;
+        }
+        #tudo {
+            display: table;
+        }
+
+        #texto {
+            padding-top:50px;
+            padding-left:100px;
+            
+        }
+        #imagem {
+            padding-top: 50px;
+            padding-left: 800px;
+        }
+
+        #botao {
+            padding-top: 50px;
+            padding-left: 30%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="tudo">
+        <!-- main header -->
+        <header>
+        </header>
+        <!-- home -->
+        <div id="tudo">
+
+            @foreach (var Produto in Model)
+            {
+                <div id="texto">
+                    <h1>01 Produto lido</h1><br />
+                    <div>
+                        <p1>Descrição:</p1><br />
+                        <p1>@Produto.Name</p1><br />
+                        <p1>Quantidade: @Produto.Type</p1>
+                    </div>
+                </div>
+            }
+            <div id="imagem">
+                <img src="~/resources/images/Index/image 5.png" width="250" height="250">
+            </div>
+
+
+            <div id="btn_div">
+                <input id="prox" onclick="window.location='Desconto'" type="submit" value="Próximo" class="btn btn-info">
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

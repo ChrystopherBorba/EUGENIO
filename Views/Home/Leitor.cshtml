@@ -1,0 +1,133 @@
+﻿@model eugenio.Models.Produto
+
+@{
+    ViewBag.Title = "Leitor";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/resources/css/style.css">
+    <title>index</title>
+
+    <div>
+        <style>
+
+
+            body {
+                background: #154137;
+                background-image: url('/resources/images/Index/pexels-gustavo-fring-4173174 1.png')
+            }
+
+            h1, h3, p {
+                color: #FFFFFF;
+            }
+
+
+            #tudo {
+                display: table;
+            }
+
+            #texto {
+                float: left;
+                width: 30%;
+            }
+
+            #barCodeReader {
+                margin-left: 50%;
+                padding-top: 30px;
+            }
+
+            #prox {
+                margin-top: 100px;
+                margin-left: 400px;
+            }
+        </style>
+
+    </div>
+
+    <div>
+        <script>
+            function PlaySound() {
+                var audio = new Audio("~/resources/sound/beep.mp3");
+                audio.play();
+            }
+            function sleep(milliseconds) {
+                const date = Date.now();
+                let currentDate = null;
+                do {
+                    currentDate = Date.now();
+                } while (currentDate - date < milliseconds);
+            }
+
+        </script>
+
+    </div>
+
+</head>
+
+<body>
+
+    <div id="tudo">
+        <div id="texto">
+
+            <h1>Leitura do código</h1>
+            <h1>de barras</h1><br />
+            <p>1. O leitor está posicionado na base inferior da tela </p><br />
+            <p>2. Aproxime o produto no leitor </><br />
+            <p>3. A leitura do código de barras deve aparecer dentro da figura ao lado para ser lido </><br />
+            <p>4. Um sinal sonoro será emitido na confirmação de leitura </p><br />
+            <p>5. Código lido! Agora você pode aproximar o próximo produto para descarte.</p><br />
+
+            <button onclick="window.location='/Home/Produtos'" id="prox" class="btn btn-info">Próximo</button>
+        </div>
+
+
+
+        <div id="barCodeReader">
+
+            <script type="text/javascript" src="~/resources/quaggaJS/dist/quagga.js"></script>
+            <script>
+                Quagga.init({
+                    inputStream: {
+                        name: "Live",
+                        type: "LiveStream",
+                        constraints: {
+                            width: 576,
+                            height: 432,
+                            facingMode: "environment",
+
+                        },
+
+                        target: document.querySelector('#barCodeReader')
+
+                    },
+                    decoder: {
+                        readers: ["code_128_reader", "ean_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "ean_8_reader", "ean_2_reader", "ean_5_reader", "upc_e_reader", "i2of5_reader", "2of5_reader", "code_93_reader"]
+
+                    }
+                }, function (err) {
+                    if (err) {
+                        console.log(err);
+                        return
+                    }
+                    console.log("Initialization finished. Ready to start");
+                    Quagga.start();
+                });
+
+                Quagga.onDetected(function (data) {
+                    PlaySound();
+                    code = data.codeResult.code
+                    alert("foi detectado o código: " + code);                   
+                    console.log(code);
+                    sleep(3000);
+
+
+                });
+
+            </script>
+        </div>
+    </div>
+</body>
+
