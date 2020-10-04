@@ -29,7 +29,7 @@ namespace eugenio.Controllers
         {
             ProdutoModel model = new ProdutoModel();
             Produto produto = new Produto();
-            List<Produto> lista = model.Consultarproduto("9781305399099");
+            List<Produto> lista = model.Consultarproduto(Produto.BarCode);
             return View(lista);
         
         }
