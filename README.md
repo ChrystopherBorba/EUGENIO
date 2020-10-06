@@ -1,4 +1,4 @@
-# EUGENIO
+# Recycle
 
 Pasta APP_DATA: Banco de dados da natura com uma lista de produtos, no qual é solicitada as informações do produto após informado o código de barras.  
 Pastas Controller, View e Model: Patas que abrigam as classes de controle, modelo e visualização do web site. Sendo o mesmo uma interface gráfica que permite com que o usuário cadastre por meio do código de barras as embalagens descartadas, e receba um desconto por isso. 
